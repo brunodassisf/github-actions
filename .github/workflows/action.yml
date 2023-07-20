@@ -1,18 +1,18 @@
+# Nome para a nossa ação
 name: "Primeira Action"
 
 on:
-    
-    push:
-       branches: ["master"]
-    pull_request:
-        branches: ["master"]
+  push:
+    branches: ["master"]
+  pull_request:
+    types: [opened, synchronize]
+    # branches: ["master"]
 
 jobs:
-    actions01:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            
-            - name: Run a one-line script
-              run: echo Hello, world!
-        
+  actions01:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo Hello, world!
