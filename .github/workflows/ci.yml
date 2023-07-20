@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # Runs single format
-      - name: Run Linter
+
+      - name: Run installation command
+        run: yarn install
+
+      - name: Run Linter command
         run: yarn lint
