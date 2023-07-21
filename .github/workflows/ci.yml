@@ -14,4 +14,4 @@ jobs:
         run: yarn install
 
       - name: Run Linter command
-        run: yarn lint
+        run: yarn lint:fix
