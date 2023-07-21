@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf .next && next build && mv ./out ./build && rm -rf out",
+    "clen:next": "rm -rf .next",
+    "build": "yarn clen:next && yarn lint:fix && next build && next export && mv ./out ./build && yarn clen:next",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy": "yarn lint:fix && yarn build && npx vercel ./build --yes",
-    "deploy:prod": "yarn deploy && npx vercel ./build --token=$VERCEL_TOKEN"
+    "deploy:prod": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN --prod"
   },
   "dependencies": {
     "@types/node": "20.4.2",
