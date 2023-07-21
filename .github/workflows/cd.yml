@@ -1,0 +1,22 @@
+name: "CD Continuous Delivery: Main Workflow"
+
+env:
+  VERCEL_TOKEN_DEPLOY: ${{ secrets.VERCEL_TOKEN_DEPLOY }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches: [main, workflows]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run installation command
+        run: yarn install
+
+      - name: Run deploy command
+        run: yarn deploy:prod
