@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "deploy": "yarn lint:fix && yarn build && npx vercel ./build --yes",
-    "deploy:prod": "yarn deploy && npx vercel ./build --token=$VERCEL_TOKEN_DEPLOY"
+    "deploy:prod": "yarn deploy && npx vercel ./build --token=$VERCEL_TOKEN"
   },
   "dependencies": {
     "@types/node": "20.4.2",
