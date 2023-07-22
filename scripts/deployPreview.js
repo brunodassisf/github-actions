@@ -43,9 +43,10 @@ fetch(
     }),
   },
 )
-  .then((response) => {
+  .then(async (response) => {
     if (response.ok) return response.json();
-    console.log(response.json());
+    const log = await response.json();
+    console.log(log);
     // throw new Error(response.statusText);
   })
   .catch((err) => {
