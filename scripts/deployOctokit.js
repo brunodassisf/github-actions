@@ -36,20 +36,19 @@ await octokit
       owner: GITHUB_OWNER,
       repo: GITHUB_REPO,
       issue_number: GITHUB_PR_NUMBER,
-      body: GH_COMMENT,
+      body: JSON.stringify(GH_COMMENT),
       headers: {
         accept: "application/vnd.github+json",
       },
     },
   )
-  .then(async (response) => {
+  .then((response) => {
     if (response.ok) return response.json();
-    const log = await response.json();
-    console.log(log);
+    throw new Error(response.statusText);
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB]: ERROR");
-    console.log(err);
+    throw new Error(err);
   })
   .finally(() => {
     console.log("[COMMENT_ON_GITHUB]: END");
