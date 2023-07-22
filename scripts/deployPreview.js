@@ -18,6 +18,11 @@ const GH_COMMENT = `
 - Deploy url: [${DEPLOY_URL}] (${DEPLOY_URL})
 `;
 
+console.log("GITHUB_TOKEN", GITHUB_TOKEN);
+console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
+console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
+console.log("GH_COMMENT", GH_COMMENT);
+
 const defaultHeaders = {};
 defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
 defaultHeaders["accept"] =
