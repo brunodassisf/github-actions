@@ -45,6 +45,7 @@ fetch(
 )
   .then((response) => {
     if (response.ok) return response.json();
+    console.log(response.json());
     // throw new Error(response.statusText);
   })
   .catch((err) => {
