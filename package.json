@@ -12,7 +12,7 @@
     "lint:fix": "next lint --fix",
     "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
     "deploy:prod": "yarn deploy:staging --prod",
-    "deploy:preview": "node ./scripts/deployPreview.js"
+    "deploy:preview": "node ./scripts/deployOctokit.js"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -21,6 +21,7 @@
     "autoprefixer": "10.4.14",
     "next": "13.4.10",
     "node-fetch": "^3.3.1",
+    "octokit": "^3.0.0",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
