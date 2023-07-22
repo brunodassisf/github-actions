@@ -29,7 +29,8 @@ defaultHeaders["accept"] =
   "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
 defaultHeaders["content-type"] = "application/json";
 console.log(
-  "URL_COMMENTS:"`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
+  "URL_COMMENTS:",
+  `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
 );
 
 fetch(
