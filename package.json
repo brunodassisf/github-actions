@@ -12,7 +12,7 @@
     "lint:fix": "next lint --fix",
     "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
     "deploy:prod": "yarn deploy:staging --prod",
-    "deploy:preview": "node ./scripts/deployPreview.cjs --trace-warnings"
+    "deploy:preview": "node --trace-warnings ./scripts/deployPreview.js"
   },
   "dependencies": {
     "@types/node": "20.4.2",
