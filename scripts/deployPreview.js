@@ -28,6 +28,9 @@ defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
 defaultHeaders["accept"] =
   "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
 defaultHeaders["content-type"] = "application/json";
+console.log(
+  "URL_COMMENTS:"`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
+);
 
 fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
@@ -41,12 +44,11 @@ fetch(
 )
   .then((response) => {
     if (response.ok) return response.json();
-    throw new Error(response.statusText);
+    // throw new Error(response.statusText);
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB]: ERROR");
     console.log(err);
-    throw new Error(err);
   })
   .finally(() => {
     console.log("[COMMENT_ON_GITHUB]: END");
