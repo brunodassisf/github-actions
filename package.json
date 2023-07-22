@@ -1,5 +1,6 @@
 {
   "name": "github-actions",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +10,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN --prod"
+    "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:preview": "node ./scripts/deploy-preview.js"
   },
   "dependencies": {
     "@types/node": "20.4.2",
