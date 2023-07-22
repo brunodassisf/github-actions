@@ -39,12 +39,13 @@ fetch(
     }),
   },
 )
-  .then((res) => {
-    if (res.ok) return res.json();
+  .then((response) => {
+    if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB]: ERROR");
+    console.log(err);
     throw new Error(err);
   })
   .finally(() => {
