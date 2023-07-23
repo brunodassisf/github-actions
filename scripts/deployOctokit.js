@@ -22,7 +22,10 @@ const {
 } = process.env;
 
 const GH_COMMENT = `
-- Deploy url: [${DEPLOY_URL}] (${DEPLOY_URL})
+:pushpin: Status do Deploy Preview
+|Preview|Build|
+|--|--|
+| [Link](${DEPLOY_URL}) :tada:|:white_check_mark:|
 `;
 
 const octokit = new Octokit({
